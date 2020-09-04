@@ -4,7 +4,7 @@ This super simple Android application project demonstrates that version 3.3.0 of
 
 If you inspect the [app/build.gradle](app/build.gradle) file, you'll see that the only two testing libraries declared in the Android tests configuration are the `espresso-core` and `fragment-testing` libraries.
 
-If you run the [MainActivityInstrumentedTest](app/src/androidTest/java/com/tazkiyatech/espressoexperiment/MainActivityInstrumentedTest.kt) test class, you'll see that the test run fails with a `Instrumentation run failed due to 'Process crashed.'` message. On inspection of Logcat, you'll see a message as follows:
+If you run the [MainActivityInstrumentedTest](app/src/androidTest/java/com/tazkiyatech/espressoexperiment/MainActivityInstrumentedTest.kt) test class, you'll see that the test run fails with an `Instrumentation run failed due to 'Process crashed.'` message. On inspection of Logcat, you'll see a message as follows:
 
 ```
 E/AndroidRuntime: FATAL EXCEPTION: Instr: androidx.test.runner.AndroidJUnitRunner
@@ -15,3 +15,5 @@ java.lang.NoSuchMethodError: No virtual method shouldWaitForActivitiesToComplete
     at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:391)
     at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2189)
 ```
+
+An issue has been raised about this in the [android-test](https://github.com/android/android-test) repository [here](https://github.com/android/android-test/issues/731).
